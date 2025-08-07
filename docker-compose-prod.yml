@@ -1,0 +1,22 @@
+x-env: &default-env
+  TZ: Europe/Berlin
+  MEMORY: 4G
+
+services:
+  terra-1:
+    image: terra
+    container_name: terra-1
+    volumes:
+      - ./terra-1/worlds:/app/worlds
+      - ./all/plugins/FastAsyncWorldEdit/clipboard/:/app/plugins/FastAsyncWorldEdit/clipboard/
+      - ./all/plugins/FastAsyncWorldEdit/history/:/app/plugins/FastAsyncWorldEdit/history/
+      - ./all/plugins/FastAsyncWorldEdit/schematics/:/app/plugins/FastAsyncWorldEdit/schematics/
+      - ./all/plugins/FastAsyncWorldEdit/sessions/:/app/plugins/FastAsyncWorldEdit/sessions/
+      - ./all/plugins/BannerMaker/banner/:/app/plugins/BannerMaker/banner/
+    environment:
+      <<: *default-env
+      MEMORY: 6G
+      LP_DATABASE: permissions
+    stdin_open: true
+    tty: true
+    restart: always

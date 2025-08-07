@@ -1,0 +1,15 @@
+name: Build Terra Image
+
+on:
+  push:
+    branches: [ "prod", "dev" ]
+    paths:
+      - '/Terra/**' # Adjust this path to match your project structure
+  workflow_dispatch:
+
+jobs:
+  call-build-workflow:
+    uses: Zoriot/Zrvr/.github/workflows/build-template.yml@dev
+    with:
+      service: Terra
+

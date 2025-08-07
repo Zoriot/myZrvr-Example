@@ -1,0 +1,9 @@
+{
+  "name": "LuckPerms",
+  "version": "5.5.0",
+  "download_url": "https://cdn.modrinth.com/data/Vebnzrzj/versions/ZPtLedoF/LuckPerms-Bukkit-5.5.0.jar",
+  "checksum": {
+    "type": "sha256",
+    "value": "62878cd55589a3e1fb476531a1737c71cd15ac62bf0b45f03d02913134a5bb00"
+  }
+}
