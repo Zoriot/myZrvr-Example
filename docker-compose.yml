@@ -6,12 +6,6 @@ services:
   terra-1:
     image: terra
     container_name: terra-1
-    volumes:
-      - ./all/plugins/FastAsyncWorldEdit/clipboard/:/app/plugins/FastAsyncWorldEdit/clipboard/
-      - ./all/plugins/FastAsyncWorldEdit/history/:/app/plugins/FastAsyncWorldEdit/history/
-      - ./all/plugins/FastAsyncWorldEdit/schematics/:/app/plugins/FastAsyncWorldEdit/schematics/
-      - ./all/plugins/FastAsyncWorldEdit/sessions/:/app/plugins/FastAsyncWorldEdit/sessions/
-      - ./all/plugins/BannerMaker/banner/:/app/plugins/BannerMaker/banner/
     env_file:
       - .env
     environment:
