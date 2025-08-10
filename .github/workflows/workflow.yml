@@ -12,4 +12,8 @@ jobs:
     uses: Zoriot/Zrvr/.github/workflows/build-template.yml@dev
     with:
       service: Terra
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
 
