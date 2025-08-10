@@ -7,7 +7,8 @@ services:
     image: terra
     container_name: terra-1
     volumes:
-      - ./terra-1/worlds:/app/worlds
+      - ./terra-1/worlds/:/app/worlds/
+      - ./terra-1/logs/:/app/logs/
       - ./all/plugins/FastAsyncWorldEdit/clipboard/:/app/plugins/FastAsyncWorldEdit/clipboard/
       - ./all/plugins/FastAsyncWorldEdit/history/:/app/plugins/FastAsyncWorldEdit/history/
       - ./all/plugins/FastAsyncWorldEdit/schematics/:/app/plugins/FastAsyncWorldEdit/schematics/
@@ -19,4 +20,4 @@ services:
       LP_DATABASE: permissions
     stdin_open: true
     tty: true
-    restart: always
+    restart: unless-stopped

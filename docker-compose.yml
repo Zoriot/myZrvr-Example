@@ -14,4 +14,7 @@ services:
       LP_DATABASE: permissions
     stdin_open: true
     tty: true
-    restart: always
+    restart: unless-stopped
+    volumes:
+      - ./terra-1/logs/:/app/logs/
+      - ./terra-1/worlds/:/app/worlds/
