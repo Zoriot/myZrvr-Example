@@ -4,7 +4,7 @@ x-env: &default-env
 
 services:
   terra-1:
-    image: terra
+    image: ghcr.io/zoriot/myzrvr-example/terra:dev
     container_name: terra-1
     volumes:
       - ./terra-1/worlds/:/app/worlds/
