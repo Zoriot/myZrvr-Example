@@ -16,8 +16,5 @@ jobs:
   deploy:
     uses: Zoriot/Zrvr/.github/workflows/deploy-template.yml@dev
     with:
-      ssh-host: ${{ secrets.SSH_HOST }}
-      ssh-user: ${{ secrets.SSH_USER }}
-      ssh-key: ${{ secrets.SSH_KEY }}
       compose-file: docker-compose-prod.
       environment: dev
