@@ -1,0 +1,23 @@
+name: Deploy Infrastructure - Production
+
+on:
+  push:
+    branches: [ "prod"]
+jobs:
+  build-terra:
+    uses: Zoriot/Zrvr/.github/workflows/build-template.yml@dev
+    with:
+      service: Terra
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+      environment: dev
+  deploy:
+    uses: Zoriot/Zrvr/.github/workflows/deploy-template.yml@dev
+    with:
+      ssh-host: ${{ secrets.SSH_HOST }}
+      ssh-user: ${{ secrets.SSH_USER }}
+      ssh-key: ${{ secrets.SSH_KEY }}
+      compose-file: docker-compose-prod.
+      environment: dev

@@ -19,7 +19,7 @@ services:
       MEMORY: 6G
       LP_DATABASE: permissions
     ports:
-      - "25565:25565"
+      - "25570:25565"
     stdin_open: true
     tty: true
     restart: unless-stopped
