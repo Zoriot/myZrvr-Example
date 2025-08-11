@@ -11,7 +11,8 @@ A basic example how to use Zrvr
 
 1. Build the Zrvr Docker image:
    ```sh
-    docker build -t terra -f ./Zrvr/Dockerfile . --build-arg APP_PATH=Terra
+   SCRIPTS_CHECKSUM=$(./Zrvr/scripts/external/calculate-checksum.sh)
+   docker build -t terra -f ./Zrvr/Dockerfile . --build-arg APP_PATH=Terra --build-arg SCRIPTS_CHECKSUM=$SCRIPTS_CHECKSUM
    ```
 2. Start all services using Docker Compose:
    ```sh
