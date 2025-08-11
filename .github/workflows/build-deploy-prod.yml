@@ -5,7 +5,7 @@ on:
     branches: [ "prod" ]
 
 jobs:
-  build-terra:
+  build-deploy-prod:
     runs-on: ubuntu-latest
     environment: prod   # Caller repo's environment (approvals + secrets)
     steps:
