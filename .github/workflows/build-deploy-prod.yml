@@ -18,7 +18,7 @@ jobs:
           service: Terra
           environment: dev
       - name: Deploy Terra Docker image
-      - uses: Zoriot/Zrvr/.github/actions/deploy@dev
+        uses: Zoriot/Zrvr/.github/actions/deploy@dev
         with:
           compose-file: docker-compose-dev.yml
     permissions:
