@@ -1,8 +1,6 @@
 {
   "JAR_NAME": "",
-  "env-args": [
-    "./plugins/LuckPerms/config.yml"
-  ],
+  "env-args": [],
   "plugins-args": [
     "./plugin_json/*"
   ]

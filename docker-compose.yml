@@ -17,4 +17,5 @@ services:
     restart: unless-stopped
     volumes:
       - ./terra-1/logs/:/app/logs/
+      - ./terra-1/plugins/LuckPerms/luckperms-h2-v2.mv.db:/app/plugins/LuckPerms/luckperms-h2-v2.mv.db
       #- ./terra-1/worlds/:/app/worlds/ # Doesnt work on windows

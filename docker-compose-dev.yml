@@ -9,6 +9,7 @@ services:
     volumes:
       - ./terra-1/worlds/:/app/worlds/
       - ./terra-1/logs/:/app/logs/
+      - ./terra-1/plugins/LuckPerms/luckperms-h2-v2.mv.db:/app/plugins/LuckPerms/luckperms-h2-v2.mv.db
       - ./all/plugins/FastAsyncWorldEdit/clipboard/:/app/plugins/FastAsyncWorldEdit/clipboard/
       - ./all/plugins/FastAsyncWorldEdit/history/:/app/plugins/FastAsyncWorldEdit/history/
       - ./all/plugins/FastAsyncWorldEdit/schematics/:/app/plugins/FastAsyncWorldEdit/schematics/
@@ -19,7 +20,6 @@ services:
     environment:
       <<: *default-env
       MEMORY: 6G
-      LP_DATABASE: permissions
     ports:
       - "25570:25565"
     stdin_open: true
