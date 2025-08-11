@@ -21,6 +21,10 @@ jobs:
         uses: Zoriot/Zrvr/.github/actions/deploy@dev
         with:
           compose-file: docker-compose-dev.yml
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_KEY: ${{ secrets.SSH_KEY }}
     permissions:
       contents: read
       packages: write
