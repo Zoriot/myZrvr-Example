@@ -3,18 +3,25 @@ name: Deploy Infrastructure - Development
 on:
   push:
     branches: [ "dev" ]
+
 jobs:
   build-terra:
-    uses: Zoriot/Zrvr/.github/workflows/build-template.yml@dev
-    with:
-      service: Terra
-      environment: dev
+    runs-on: ubuntu-latest
+    environment: dev   # Caller repo's environment (approvals + secrets)
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Terra Docker image
+        # This action builds and pushes the Docker image for Terra
+        # It is assumed that the action is defined in the Zrvr repository
+        uses: Zoriot/Zrvr/.github/actions/build@dev
+        with:
+          service: Terra
+          environment: dev
+      - name: Deploy Terra Docker image
+      - uses: Zoriot/Zrvr/.github/actions/deploy@dev
+        with:
+          compose-file: docker-compose-dev.yml
     permissions:
       contents: read
       packages: write
       id-token: write
-  deploy:
-    uses: Zoriot/Zrvr/.github/workflows/deploy-template.yml@dev
-    with:
-      compose-file: docker-compose-dev.yml
-      environment: dev
