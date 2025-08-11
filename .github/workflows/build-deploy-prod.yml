@@ -12,6 +12,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: 'true'  # Ensure submodules are checked out
+
       - name: Build Terra Docker image
         # This action builds and pushes the Docker image for Terra
         # It is assumed that the action is defined in the Zrvr repository
@@ -19,6 +20,9 @@ jobs:
         with:
           service: Terra
           environment: prod
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Deploy Terra Docker image
         uses: Zoriot/Zrvr/.github/actions/deploy@dev
         with:
@@ -27,6 +31,7 @@ jobs:
           SSH_HOST: ${{ secrets.SSH_HOST }}
           SSH_USER: ${{ secrets.SSH_USER }}
           SSH_KEY: ${{ secrets.SSH_KEY }}
+
     permissions:
       contents: read
       packages: write
