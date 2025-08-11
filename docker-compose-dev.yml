@@ -14,6 +14,8 @@ services:
       - ./all/plugins/FastAsyncWorldEdit/schematics/:/app/plugins/FastAsyncWorldEdit/schematics/
       - ./all/plugins/FastAsyncWorldEdit/sessions/:/app/plugins/FastAsyncWorldEdit/sessions/
       - ./all/plugins/BannerMaker/banner/:/app/plugins/BannerMaker/banner/
+    env_file:
+      - .env
     environment:
       <<: *default-env
       MEMORY: 6G
