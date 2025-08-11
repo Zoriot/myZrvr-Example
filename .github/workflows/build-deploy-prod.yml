@@ -10,6 +10,8 @@ jobs:
     environment: prod   # Caller repo's environment (approvals + secrets)
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: 'true'  # Ensure submodules are checked out
       - name: Build Terra Docker image
         # This action builds and pushes the Docker image for Terra
         # It is assumed that the action is defined in the Zrvr repository
