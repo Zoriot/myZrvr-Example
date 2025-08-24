@@ -29,3 +29,10 @@ A basic example how to use Zrvr
 - Scripts for plugin management and setup are in `Zrvr/scripts/`.
 
 For more details, see `Zrvr/README.md`.
+
+> [!IMPORTANT]
+> In the case that the `Zrvr` folder has not been cloned for some reason use the
+> ```sh
+> git submodule update --init --recursive
+> ```
+> command in the root of the repository.
